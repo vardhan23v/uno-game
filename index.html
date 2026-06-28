@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium UNO Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-effect"></div>
+    <div class="game-container">
+        <!-- CPU Area -->
+        <div class="player-area cpu-area">
+            <div class="player-info">
+                <div class="avatar">🤖</div>
+                <div class="name">CPU <span class="card-count" id="cpu-card-count">7 Cards</span></div>
+            </div>
+            <div class="hand" id="cpu-hand"></div>
+        </div>
+
+        <!-- Center Area -->
+        <div class="center-area">
+            <div class="deck-container">
+                <div class="card card-back draw-deck" id="draw-deck">
+                    <div class="inner"><div class="logo">UNO</div></div>
+                </div>
+                <div class="discard-wrap" id="discard-pile">
+                    <!-- Discarded cards inject here -->
+                </div>
+            </div>
+            <div class="status-message" id="status-message">Your Turn!</div>
+        </div>
+
+        <!-- User Area -->
+        <div class="player-area user-area">
+            <div class="hand" id="user-hand"></div>
+            <div class="player-info">
+                <div class="avatar">👤</div>
+                <div class="name">You</div>
+                <button id="uno-btn" class="uno-btn hidden">UNO!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal overlay hidden" id="color-picker-modal">
+        <div class="modal-content glass">
+            <h2>Select Color</h2>
+            <div class="color-options">
+                <button class="color-btn red" data-color="red"></button>
+                <button class="color-btn blue" data-color="blue"></button>
+                <button class="color-btn green" data-color="green"></button>
+                <button class="color-btn yellow" data-color="yellow"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal overlay hidden" id="game-over-modal">
+        <div class="modal-content glass">
+            <h2 id="winner-text">You Win!</h2>
+            <button id="restart-btn" class="primary-btn">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Notification overlay -->
+    <div class="notification hidden" id="notification">
+        <h2 id="notification-text">UNO!</h2>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
